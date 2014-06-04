@@ -5,12 +5,12 @@ Improved `android.util.Log` static function
 
 ### 1. check null and empty string
 
-    android.util.Log.d(TAG, null);  // Crash → NullPointException
-    android.util.Log.d(TAG, "");    // Show nothing in adb logcat → we don't even know whether this code is executed or not
+    android.util.Log.d(TAG, null);  // Throw NullPointException
+    android.util.Log.d(TAG, "");    // Show nothing in adb logcat → we don't even know whether the code is executed or not
 
-This logger will print them as a space blank
+This logger will print `null` as `"(null)"`, and print `""` as a space blank
 
-    Log.d(TAG, null);  // android.util.Log.d(TAG, " ");
+    Log.d(TAG, null);  // android.util.Log.d(TAG, "(null)");
     Log.d(TAG, "");    // android.util.Log.d(TAG, " ");
 
 ### 2. support string format with indefinite parameter 'objs'
@@ -30,5 +30,3 @@ This logger can help you to cut the large message into small size substring, and
 There are 6 level `Log.VERBOSE`, `Log.DEBUG`, `Log.INFO`, `Log.WARN`, `Log.ERROR`, `Log.ALL_LEVEL` to configure.
 
     Log.setLevel(Log.DEBUG | Log.INFO);  // show Debug and Info log level only
-
-

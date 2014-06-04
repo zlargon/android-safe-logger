@@ -110,18 +110,19 @@ public class Log {
      * @return
      */
     private static String strict(final String format, final Object ... objs) {
-        if (format == null) {
-            return " ";
-        }
-
-        String s = String.format(format, objs);  // throw IllegalFormatException
-        return strict(s);
+        return strict(format == null ? null : String.format(format, objs));  // throw IllegalFormatException
     }
     // @Polymorphism
     private static String strict(final String string) {
-        if (string == null || string.length() == 0) {
+
+        if (string == null) {
+            return "(null)";
+        }
+
+        if (string.length() == 0) {
             return " ";
         }
+
         return string;
     }
 
