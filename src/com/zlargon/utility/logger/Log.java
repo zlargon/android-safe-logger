@@ -4,6 +4,7 @@ package com.zlargon.utility.logger;
  *
  * @author zlargon
  * @email  zlargon@icloud.com
+ * @GitHub https://github.com/zlargon/android-safe-logger
  *
  * Improve android.util.Log Static Method
  *

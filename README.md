@@ -1,4 +1,4 @@
-BetterAndroidLogger
+android-safe-logger
 ===================
 
 Improved `android.util.Log` static function
@@ -18,7 +18,7 @@ This logger will print `null` as `"(null)"`, and print `""` as a space blank
 you can use this logger just like `String.format`
 
     Log.d(TAG, "%s %d", "Hello", 2014);  // output >> Hello 2014
-   
+
 ### 3. support to print large size message
 
 `android.util.Log` can not print the message over than 4000 characters in `adb logcat`
